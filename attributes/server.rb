@@ -1,7 +1,7 @@
 
-default['logstash']['server']['version'] = "1.1.1"
-default['logstash']['server']['source_url'] = 'http://semicomplete.com/files/logstash/logstash-1.1.1-monolithic.jar'
-default['logstash']['server']['checksum'] = '36f462b50efad0773b3ff94920d1de500faa236cb0d81439110b50b08978444d'
+default['logstash']['server']['version'] = "1.1.9"
+default['logstash']['server']['source_url'] = 'https://logstash.objects.dreamhost.com/release/logstash-1.1.9-monolithic.jar'
+default['logstash']['server']['checksum'] = 'e444e89a90583a75c2d6539e5222e2803621baa0ae94cb77dbbcebacdc0c3fc7'
 default['logstash']['server']['install_method'] = "jar" # Either `source` or `jar`
 default['logstash']['server']['base_config'] = "server.conf.erb"
 default['logstash']['server']['base_config_cookbook'] = "logstash"
