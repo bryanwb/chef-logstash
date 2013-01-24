@@ -107,7 +107,8 @@ elsif platform? "redhat", "centos","amazon", "fedora"
     mode "0774"
     variables(
               :config_file => "logstash.conf",
-              :basedir => "#{node['logstash']['basedir']}/server"
+              :basedir => "#{node['logstash']['basedir']}/server",
+              :max_heap => node[:logstash][:server][:xmx]
               )
   end
   service "logstash_server" do

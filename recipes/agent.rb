@@ -73,7 +73,8 @@ elsif platform? "redhat", "centos", "amazon", "fedora"
     mode "0774"
     variables(
               :config_file => "shipper.conf",
-              :basedir => "#{node['logstash']['basedir']}/agent"
+              :basedir => "#{node['logstash']['basedir']}/agent",
+              :max_heap => node[:logstash][:agent][:xmx]
               )
   end
   service "logstash_agent" do
