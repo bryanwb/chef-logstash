@@ -8,6 +8,7 @@
 # main front-end server - Bryan W. Berry 28 June 2012
 
 include_recipe "logrotate"
+include_recipe "logstash::server"
 
 directory "#{node['logstash']['basedir']}/server/apache_logs" do
   action :create
@@ -36,7 +37,7 @@ end
 
 # set logrotate  for /opt/logstash/server/apache_logs
 logrotate_app "apache_logs" do
-  path node['logstash']['server']['logrotate_target']
+  path '/opt/logstash/server/apache_logs/*.log'
   frequency "daily"
   create    "664 #{node['logstash']['user']} #{node['logstash']['user']}"
   rotate "30"
